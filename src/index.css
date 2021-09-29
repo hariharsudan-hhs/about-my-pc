@@ -1,0 +1,9 @@
+body {
+  /*padding: 10% 15%;*/
+  font-family: -apple-system, BlinkMacSystemFont, 'Poppins', "Helvetica Neue", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f6f6f6 !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
