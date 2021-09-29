@@ -99,13 +99,13 @@ function MiddleLayout() {
     <div>
       <Row>
         <Col xs={24} sm={24} md={12} lg={6} xl={6} xxl={6}>
-          <InfoCard title="Color Depth">{colorDepth}</InfoCard>
+          <InfoCard title="Color Depth"><span>{colorDepth}</span></InfoCard>
         </Col>
         <Col xs={24} sm={24} md={12} lg={6} xl={6} xxl={6}>
-          <InfoCard title="Flash">{flash}</InfoCard>
+          <InfoCard title="Flash"><span>{flash}</span></InfoCard>
         </Col>
         <Col xs={24} sm={24} md={24} lg={12} xl={12} xxl={12}>
-          <InfoCard title="Web Browser">{webBrowser}</InfoCard>
+          <InfoCard title="Web Browser"><span>{webBrowser}</span></InfoCard>
         </Col>
       </Row>
     </div>

@@ -97,15 +97,15 @@ function TopLayout() {
       <Row>
         <Col xs={24} sm={24} md={24} lg={12} xl={12} xxl={12}>
           <InfoCard title="Operating System">
-            {osInfo}
+            <span>{osInfo}</span>
           </InfoCard>
         </Col>
         <Col xs={24} sm={24} md={12} lg={6} xl={6} xxl={6}>
-          <InfoCard title="Javascript">{jsEnabled}</InfoCard>
+          <InfoCard title="Javascript"><span>{jsEnabled}</span></InfoCard>
         </Col>
         <Col xs={24} sm={24} md={12} lg={6} xl={6} xxl={6}>
           <InfoCard title="Cookies">
-            {cookiesEnabled ? "Enabled" : "Disabled"}
+          <span>{cookiesEnabled ? "Enabled" : "Disabled"}</span>
           </InfoCard>
         </Col>
       </Row>

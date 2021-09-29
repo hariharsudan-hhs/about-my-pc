@@ -8,17 +8,30 @@ import DeviceContext from "./store/Device-context";
 function App() {
   const { Header, Content, Footer } = Layout;
 
-  const [progressValue, setProgressValue] = useState(10);
+  const [progressValue, setProgressValue] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadingText, setLoadingText] = useState("");
 
   const deviceCtx = useContext(DeviceContext);
 
+  const loadingTextArray = [
+    "Waking up the minions...",
+    "Pushing pixels...",
+    "Doing the heavy lifting...",
+    "Are we there yet?",
+  ];
+
+  var count = 0;
+
   useEffect(() => {
     setIsLoading(true);
-
+    setProgressValue(0);
+    setLoadingText(loadingTextArray[count]);
     const interval = setInterval(() => {
       setProgressValue((oldProgressValue) => {
-        const newProgressValue = oldProgressValue + 25;
+        setLoadingText(loadingTextArray[count]);
+        count++;
+        const newProgressValue = oldProgressValue + 20;
         if (newProgressValue >= 100) {
           setIsLoading(false);
           clearInterval(interval);
@@ -26,7 +39,7 @@ function App() {
 
         return newProgressValue;
       });
-    }, 1000);
+    }, 1500);
 
     deviceCtx.getOsDetails();
     deviceCtx.getCookieDetails();
@@ -43,16 +56,20 @@ function App() {
     return (
       <div className="loader-layout">
         <Row justify="center">
-          <Col xs={24} sm={20} md={16} lg={12} xl={8} xxl={8}>
-            <div className="loader-box">
-              <Progress
-                strokeColor={{
-                  "0%": "#108ee9",
-                  "100%": "#87d068",
-                }}
-                percent={progressValue}
-                showInfo={false}
-              />
+          <Col xs={20} sm={20} md={16} lg={12} xl={8} xxl={8}>
+            <div className="loader-bg">
+              <div className="loader-text-bg">{loadingText}</div>
+              <div className="loader-progress-bg">
+                <Progress
+                  strokeColor={{
+                    "0%": "#1dd1a1",
+                    "100%": "#1dd1a1",
+                  }}
+                  percent={progressValue}
+                  showInfo={false}
+                />
+              </div>
+              <div className="loader-text-developedby">Developed by HHS</div>
             </div>
           </Col>
         </Row>

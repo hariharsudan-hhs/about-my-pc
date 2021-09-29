@@ -32,19 +32,23 @@ function BottomLayout() {
     <div>
       <Row>
         <Col xs={24} sm={24} md={12} lg={6} xl={6} xxl={6}>
-          <InfoCard title="Language">{language}</InfoCard>
+          <InfoCard title="Language">
+            <span>{language}</span>
+          </InfoCard>
         </Col>
         <Col xs={24} sm={24} md={12} lg={6} xl={6} xxl={6}>
-          <InfoCard title="Ad Block">{adBlock}</InfoCard>
+          <InfoCard title="Ad Block">
+            <span>{adBlock}</span>
+          </InfoCard>
         </Col>
         <Col xs={24} sm={24} md={12} lg={6} xl={6} xxl={6}>
           <InfoCard title="Screen DPI">
-            {devicePixelRatio}
+            <span>{devicePixelRatio}</span>
           </InfoCard>
         </Col>
         <Col xs={24} sm={24} md={12} lg={6} xl={6} xxl={6}>
           <InfoCard title="Resolution">
-            {resolution}
+            <span>{resolution}</span>
           </InfoCard>
         </Col>
       </Row>

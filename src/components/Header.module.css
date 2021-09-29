@@ -6,6 +6,7 @@
 
 .header .div {
     text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
+    /* font-weight: bold; */
 }

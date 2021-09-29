@@ -8,9 +8,23 @@
   text-align: center;
 }
 
+.ant-card-head-title {
+  display: inline-block;
+  flex: 1 1;
+  padding: 16px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  /* color: #000000; */
+  font-size: 1em;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
 .loader-layout {
   margin: auto;
-  height: 40vh;
+  height: 30vh;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -21,15 +35,34 @@
   vertical-align: middle;
 }
 
-.loader-box {
-  height: 40vh;
-  line-height: 34vh;
+.loader-bg {
   padding: 24px;
   background-color: #ffffff;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 15%);
+}
+
+.loader-progress-bg {
+  /* height: 10vh; */
+  /* line-height: 34vh; */
+  padding: 24px;
+  /* box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 15%); */
+}
+
+.loader-text-bg {
+  padding: 24px 24px 0px 24px;
+}
+
+.loader-text-developedby {
+  padding: 24px;
+  font-size: small;
 }
 
 .ads {
   background-color: transparent;
   height: 1px;
   width: 1px;
+}
+
+.layout {
+  background-color: transparent;
 }
