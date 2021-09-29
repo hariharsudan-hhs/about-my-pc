@@ -1,9 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { DeviceContextProvider } from "./store/Device-context.js";
 
 ReactDOM.render(
- <App />,
-  document.getElementById('root')
+  <DeviceContextProvider>
+    <App />
+  </DeviceContextProvider>,
+  document.getElementById("root")
 );

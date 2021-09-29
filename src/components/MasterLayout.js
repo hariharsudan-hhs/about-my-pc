@@ -16,7 +16,6 @@ function MasterLayout() {
         <MiddleLayout />
         <BottomLayout />
       </div>
-      <div id="ads-notify-abtmypc" className={classes.ads}></div>
     </div>
   );
 }
