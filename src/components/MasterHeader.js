@@ -2,7 +2,16 @@ import classes from "./MasterHeader.module.css";
 import { Space } from "antd";
 import { Menu, Dropdown } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRedoAlt, faSave, faTint, faInfo, faShare } from "@fortawesome/free-solid-svg-icons";
+import {
+  faRedoAlt,
+  faSave,
+  faTint,
+  faInfo,
+  faShare,
+} from "@fortawesome/free-solid-svg-icons";
+import HeaderContext from "../store/Header-Context.js";
+import { useContext } from 'react';
+
 
 function MasterHeader() {
   function refreshHandler() {
@@ -17,7 +26,7 @@ function MasterHeader() {
     if (color === "Casandora Yellow") bgColor = "#feca57";
     if (color === "Imperial Primer") bgColor = "#222f3e";
 
-    document.body.style.setProperty('background-color', bgColor, 'important');
+    document.body.style.setProperty("background-color", bgColor, "important");
   }
 
   const themeMenu = (
@@ -40,6 +49,12 @@ function MasterHeader() {
     </Menu>
   );
 
+  const headerCtx = useContext(HeaderContext);
+
+  function saveHandler() {
+    headerCtx.setIsDownloadVisible(true);
+  }
+
   return (
     <div>
       <div className={classes.leftHeaderArea}>
@@ -49,16 +64,25 @@ function MasterHeader() {
       </div>
       <div className={classes.rightHeaderArea}>
         <Space size={60}>
-        <span className={classes.clickableSpan}><FontAwesomeIcon size={"lg"} icon={faSave} /></span>
+          <span className={classes.clickableSpan} onClick={saveHandler}>
+            <FontAwesomeIcon size={"lg"} icon={faSave} />
+          </span>
           <span className={classes.clickableSpan}>
             <Dropdown overlay={themeMenu} trigger={["click"]}>
-              <span onClick={(e) => e.preventDefault()}><FontAwesomeIcon size={"lg"} icon={faTint} /></span>
+              <span onClick={(e) => e.preventDefault()}>
+                <FontAwesomeIcon size={"lg"} icon={faTint} />
+              </span>
             </Dropdown>
           </span>
-          <span className={classes.clickableSpan}><FontAwesomeIcon size={"lg"} icon={faShare} /></span>
-          <span className={classes.clickableSpan}><FontAwesomeIcon size={"lg"} icon={faInfo} /></span>
+          <span className={classes.clickableSpan}>
+            <FontAwesomeIcon size={"lg"} icon={faShare} />
+          </span>
+          <span className={classes.clickableSpan}>
+            <FontAwesomeIcon size={"lg"} icon={faInfo} />
+          </span>
         </Space>
       </div>
+      
     </div>
   );
 }

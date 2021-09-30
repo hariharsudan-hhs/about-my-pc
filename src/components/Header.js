@@ -1,9 +1,9 @@
 import classes from "./Header.module.css";
 
-function Header() {
+function Header(props) {
   return (
     <header className={classes.header}>
-      <div className={classes.div}>About Your Device</div>
+      <div className={classes.div}>{props.value}</div>
     </header>
   );
 }

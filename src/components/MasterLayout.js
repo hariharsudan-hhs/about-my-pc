@@ -10,7 +10,7 @@ function MasterLayout() {
   return (
     <div className={classes.masterLayout}>
       <div className={classes.innerLayout}>
-        <Header />
+        <Header value="About Your Device"/>
         <Divider />
         <TopLayout />
         <MiddleLayout />

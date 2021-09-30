@@ -4,6 +4,8 @@ import { Layout, Row, Col, Progress } from "antd";
 import "./App.css";
 import { useEffect, useState, useContext } from "react";
 import DeviceContext from "./store/Device-context";
+import HeaderContext from "./store/Header-Context";
+import DraggableDownload from "./components/Draggable/DraggableDownload";
 
 function App() {
   const { Header, Content, Footer } = Layout;
@@ -13,6 +15,9 @@ function App() {
   const [loadingText, setLoadingText] = useState("");
 
   const deviceCtx = useContext(DeviceContext);
+
+  const headerCtx = useContext(HeaderContext);
+  const isDownloadVisible = headerCtx.isDownloadVisible;
 
   const loadingTextArray = [
     "Waking up the minions...",
@@ -79,6 +84,7 @@ function App() {
   } else {
     return (
       <Layout className="layout">
+        {isDownloadVisible && <DraggableDownload />}
         <Header>
           <MasterHeader />
         </Header>

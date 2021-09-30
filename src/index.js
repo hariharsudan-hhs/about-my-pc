@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { DeviceContextProvider } from "./store/Device-context.js";
+import { HeaderContextProvider } from "./store/Header-Context.js";
 
 ReactDOM.render(
   <DeviceContextProvider>
-    <App />
+    <HeaderContextProvider>
+      <App />
+    </HeaderContextProvider>
   </DeviceContextProvider>,
   document.getElementById("root")
 );
