@@ -7,7 +7,7 @@ import {
   faSave,
   faTint,
   faInfo,
-  faShare,
+  // faShare,
 } from "@fortawesome/free-solid-svg-icons";
 import HeaderContext from "../store/Header-Context.js";
 import { useContext } from 'react';
@@ -32,19 +32,19 @@ function MasterHeader() {
   const themeMenu = (
     <Menu>
       <Menu.Item key="0">
-        <div onClick={themeHandler}>Wild Caribbean Green</div>
+        <div className="menu-item" onClick={themeHandler}>Wild Caribbean Green</div>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="1">
-        <div onClick={themeHandler}>Pastel Red</div>
+        <div className="menu-item" onClick={themeHandler}>Pastel Red</div>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="2">
-        <div onClick={themeHandler}>Casandora Yellow</div>
+        <div className="menu-item" onClick={themeHandler}>Casandora Yellow</div>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="3">
-        <div onClick={themeHandler}>Imperial Primer</div>
+        <div className="menu-item" onClick={themeHandler}>Imperial Primer</div>
       </Menu.Item>
     </Menu>
   );
@@ -53,6 +53,10 @@ function MasterHeader() {
 
   function saveHandler() {
     headerCtx.setIsDownloadVisible(true);
+  }
+
+  function infoHandler() {
+    headerCtx.setIsInfoVisible(true);
   }
 
   return (
@@ -74,10 +78,10 @@ function MasterHeader() {
               </span>
             </Dropdown>
           </span>
-          <span className={classes.clickableSpan}>
+          {/* <span className={classes.clickableSpan}>
             <FontAwesomeIcon size={"lg"} icon={faShare} />
-          </span>
-          <span className={classes.clickableSpan}>
+          </span> */}
+          <span className={classes.clickableSpan} onClick={infoHandler}>
             <FontAwesomeIcon size={"lg"} icon={faInfo} />
           </span>
         </Space>

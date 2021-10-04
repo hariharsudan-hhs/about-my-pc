@@ -6,6 +6,7 @@ import { useEffect, useState, useContext } from "react";
 import DeviceContext from "./store/Device-context";
 import HeaderContext from "./store/Header-Context";
 import DraggableDownload from "./components/Draggable/DraggableDownload";
+import DraggableInfo from "./components/Draggable/DraggableInfo";
 
 function App() {
   const { Header, Content, Footer } = Layout;
@@ -18,6 +19,7 @@ function App() {
 
   const headerCtx = useContext(HeaderContext);
   const isDownloadVisible = headerCtx.isDownloadVisible;
+  const isInfoVisible = headerCtx.isInfoVisible;
 
   const loadingTextArray = [
     "Waking up the minions...",
@@ -85,6 +87,7 @@ function App() {
     return (
       <Layout className="layout">
         {isDownloadVisible && <DraggableDownload />}
+        {isInfoVisible && <DraggableInfo />}
         <Header>
           <MasterHeader />
         </Header>

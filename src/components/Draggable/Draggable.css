@@ -35,3 +35,12 @@
 .list-title {
   letter-spacing: 1.7px;
 }
+
+.list-info-text {
+  letter-spacing: 1.7px;
+  font-weight: normal;
+}
+
+.menu-item {
+  padding: 8px;
+}
