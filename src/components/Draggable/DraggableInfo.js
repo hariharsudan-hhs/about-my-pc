@@ -26,7 +26,7 @@ function DraggableInfo() {
                     <Header value="Info" />
                   </div>
                   <div className="box-content">
-                   <div className="list-info-text">Everything you need to know about your device in one simple and clean view. Developed using React and Ant-Design UI. <br/><br/>A side project from HHS, inspired from Browso.</div>
+                   <div className="list-info-text">Everything you need to know about your device in one simple and clean view. Developed using React and Ant-Design UI. <br/><br/>A <a href="https://github.com/hariharsudan-hhs/about-my-pc">side project</a> from <a href="https://hariharsudan-hhs.netlify.app/">HHS</a>, inspired from Browso.</div>
                   </div>
                 </strong>
               </div>
